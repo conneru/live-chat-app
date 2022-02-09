@@ -18,7 +18,7 @@ import ChatroomColumn from "../ChatroomColumn/ChatroomColumn";
 import Chatroom from "../Chatroom/Chatroom";
 import ChannelList from "../ChannelList/ChannelList";
 
-const socket = io("http://localhost:4001");
+const socket = io("https://discourse-live-chat.herokuapp.com/");
 
 function Dashboard() {
   const navigate = useNavigate();
