@@ -112,6 +112,12 @@ app.get("/logout", async (req, res) => {
   res.redirect("/");
 });
 
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../websockets', 'build', 'index.html'));
+});
+}
+
 server.listen(port, () => {
   console.log("listening on *:4001");
 });
