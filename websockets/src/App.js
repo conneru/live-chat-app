@@ -7,7 +7,6 @@ import Login from "./components/Login/Login";
 import { authenticate } from "./store/session";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import ServersPage from "./components/ServersPage/SeversPage";
 
 function App() {
   const dispatch = useDispatch();
