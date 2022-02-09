@@ -65,6 +65,26 @@ app.all("*", function (req, res, next) {
   next();
 });
 
+if (process.env.NODE_ENV === "production") {
+  const path = require("path");
+  // Serve the frontend's index.html file at the root route
+  app.get("/", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "../../websockets", "build", "index.html")
+    );
+  });
+
+  // Serve the static assets in the websockets's build folder
+  app.use(express.static(path.resolve("../websockets/build")));
+
+  // Serve the websockets's index.html file at all other routes NOT starting with /api
+  app.get(/^(?!\/?api).*/, (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "../../websockets", "build", "index.html")
+    );
+  });
+}
+
 const io = require("socket.io")(server, {
   cors: {
     origin: "*",
@@ -112,11 +132,12 @@ app.get("/logout", async (req, res) => {
   res.redirect("/");
 });
 
-const path = require('path');
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../../websockets', 'build', 'index.html'));
+const path = require("path");
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "../../websockets", "build", "index.html")
+  );
 });
-}
 
 server.listen(port, () => {
   console.log("listening on *:4001");
