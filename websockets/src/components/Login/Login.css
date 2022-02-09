@@ -1,0 +1,55 @@
+.login-input {
+  background-color: #2e353d;
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 40px;
+  font-size: 16px;
+  color: #ebebeb;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.register-input {
+  background-color: #2e353d;
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 40px;
+  font-size: 16px;
+  color: #ebebeb;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 75%;
+}
+
+.login-input:focus {
+  outline: #c396e4;
+}
+
+.login-page-button {
+  width: 100%;
+  background-color: #c396e4;
+  height: 40px;
+  border-radius: 3px;
+  font-family: Uni-Heavy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.register-page-button {
+  width: 50%;
+  background-color: #c396e4;
+  height: 40px;
+  border-radius: 3px;
+  font-family: Uni-Heavy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-page-button:hover {
+  transition: 0.3s;
+  background-color: #a781c2;
+}

@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Uni-Thin";
+  src: url("./font/Uni\ Sans\ Thin.otf");
+}
+@font-face {
+  font-family: "Uni-Heavy";
+  src: url("./font/Uni\ Sans\ Heavy.otf");
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Uni-Thin";
+  font-weight: 1000;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 700px) {
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
