@@ -45,6 +45,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+
 app.use(cookieParser("ahahha123"));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -54,6 +55,8 @@ app.use("/signup", signUpRoute);
 app.use("/login", loginRoute);
 app.use("/chat", chatRoute);
 app.use("/message", messageRoute);
+
+app.use(express.static(__dirname + "../../websockets/build"));
 
 app.all("*", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

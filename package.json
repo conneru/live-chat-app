@@ -1,0 +1,23 @@
+{
+  "name": "websocket-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "npm run build --prefix websockets",
+    "install": "npm --prefix websock-server install websock-server && npm --prefix websockets install websockets",
+    "start": "npm start --prefix websock-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conneru/live-chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conneru/live-chat-app/issues"
+  },
+  "homepage": "https://github.com/conneru/live-chat-app#readme"
+}
