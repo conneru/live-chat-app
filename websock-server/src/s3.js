@@ -24,14 +24,7 @@ async function generateUploadURL() {
     Expires: 60,
   };
   console.log("in upload");
-  const uploadURL = await s3.getSignedUrlPromise(
-    "putObject",
-    params,
-    (err, data) => {
-      if (err) console.log(err);
-      else console.log(data);
-    }
-  );
+  const uploadURL = await s3.getSignedUrlPromise("putObject", params);
   return uploadURL;
 }
 

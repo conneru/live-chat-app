@@ -27,6 +27,7 @@ const signUpRoute = require("../routes/signup");
 const loginRoute = require("../routes/login");
 const chatRoute = require("../routes/chatroom");
 const messageRoute = require("../routes/message");
+const s3Route = require("../routes/s3url");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -55,6 +56,7 @@ app.use("/signup", signUpRoute);
 app.use("/login", loginRoute);
 app.use("/chat", chatRoute);
 app.use("/message", messageRoute);
+app.use("/s3Url", s3Route);
 
 app.use(express.static(__dirname + "../../websockets/build"));
 
@@ -123,13 +125,13 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/s3Url", async (req, res) => {
-  console.log("gettings url");
-  const url = await generateUploadURL();
+// app.get("/s3Url", async (req, res) => {
+//   console.log("gettings url");
+//   const url = await generateUploadURL();
 
-  console.log("got the url");
-  res.send({ url });
-});
+//   console.log("got the url");
+//   res.send({ url });
+// });
 
 app.get("/logout", async (req, res) => {
   console.log("in logout");
