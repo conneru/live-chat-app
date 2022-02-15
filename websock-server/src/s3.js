@@ -23,7 +23,7 @@ async function generateUploadURL() {
     Key: `${key}`,
     Expires: 60,
   };
-
+  console.log("in upload");
   const uploadURL = await s3.getSignedUrlPromise(
     "putObject",
     params,
