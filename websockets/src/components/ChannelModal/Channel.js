@@ -27,6 +27,7 @@ const Channel = ({ setShowModal, chat, setCurrentChat }) => {
 
   const handleUpload = async (file) => {
     const { url } = await fetch("/s3Url").then((res) => res.json());
+    console.log(url);
     await fetch(url, {
       method: "PUT",
       headers: {
@@ -34,8 +35,8 @@ const Channel = ({ setShowModal, chat, setCurrentChat }) => {
       },
       body: file,
     });
-
     const imageUrl = url.split("?")[0];
+    console.log(imageUrl);
     return imageUrl;
   };
 
