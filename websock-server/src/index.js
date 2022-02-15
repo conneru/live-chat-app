@@ -124,7 +124,10 @@ io.on("connection", (socket) => {
 });
 
 app.get("/s3Url", async (req, res) => {
+  console.log("gettings url");
   const url = await generateUploadURL();
+
+  console.log("got the url");
   res.send({ url });
 });
 
