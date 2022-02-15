@@ -123,7 +123,7 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/s3Url", async (req, res) => {
+router.get("/s3Url", async (req, res) => {
   const url = await generateUploadURL();
   res.send({ url });
 });
