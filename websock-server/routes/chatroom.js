@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Chatroom = require("../models/Chatroom");
 const Message = require("../models/Message");
+const User = require("../models/User");
 
 router.post("/", async (req, res) => {
   const { name, user } = req.body;
@@ -16,6 +17,20 @@ router.get("/:userId", async (req, res) => {
   const { userId } = req.params;
 
   const room = await Chatroom.find({ users: { $in: [userId] } });
+
+  for (let i = 0; i < room.length; i++) {
+    let channel = room[i];
+    let users = channel.users;
+    let newUsers = [];
+    for (let j = 0; j < users.length; j++) {
+      let user = users[j];
+      let fullUser = await User.findById(user);
+      if (fullUser) {
+        newUsers.push(fullUser.username);
+      }
+    }
+    channel.users = newUsers;
+  }
 
   res.send(room);
 });

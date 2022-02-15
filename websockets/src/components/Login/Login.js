@@ -66,6 +66,23 @@ function Login() {
       }
     }
   }
+
+  async function demoUser() {
+    let res = await fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: "demo@gmail.com",
+        password: "demo",
+      }),
+    });
+    if (res.ok) {
+      dispatch(authenticate());
+      navigate("/dashboard");
+    }
+  }
   return (
     <div
       style={{
@@ -112,6 +129,7 @@ function Login() {
               <label htmlFor="password">Password</label>
               <input
                 value={password}
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
                 className="login-input"
@@ -136,14 +154,33 @@ function Login() {
               Don't have an account? Click to register!
             </div>
           </div>
-          <img
-            src={chat}
-            alt="chat"
+          <div
             style={{
-              width: "250px",
-              height: "250px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
-          ></img>
+          >
+            <img
+              src={chat}
+              alt="chat"
+              style={{
+                width: "250px",
+                height: "250px",
+                paddingBottom: "75px",
+              }}
+            ></img>
+            <div
+              onClick={demoUser}
+              style={{
+                color: "#c396e4",
+                cursor: "pointer",
+                marginLeft: "50px",
+              }}
+            >
+              Demo User
+            </div>
+          </div>
         </div>
       ) : (
         <div
@@ -202,6 +239,7 @@ function Login() {
             <label htmlFor="password">Password</label>
             <input
               value={password}
+              type="password"
               onChange={(e) => setPassword(e.target.value)}
               name="password"
               className="register-input"

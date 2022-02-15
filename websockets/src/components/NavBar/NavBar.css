@@ -1,0 +1,100 @@
+.navBar {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  /* border-bottom: 1px solid rgb(169, 169, 169); */
+  background-color: #343d46;
+}
+
+.cart {
+  position: absolute;
+}
+
+.homeLink {
+  text-decoration: none;
+  cursor: pointer;
+}
+.logo {
+  font-size: 30px;
+  color: #c396e4;
+  font-family: "Uni-Heavy";
+  padding-left: 20px;
+}
+
+.sellBtn:hover {
+  cursor: pointer;
+}
+
+.userStuffs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.proPic {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+  /* padding-top: 5px; */
+}
+
+.proPic:hover {
+  cursor: pointer;
+}
+
+.proInfo {
+  /* width: 98%; */
+  /* border: 1px solid black; */
+  width: 110px;
+  padding: 10px;
+  left: 92%;
+  top: 60px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 5px;
+  box-shadow: rgb(215 215 215) 0px 0px 5px 0px;
+  /* align-items: center; */
+  background-color: white;
+}
+
+.profile {
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.profile:hover {
+  cursor: pointer;
+}
+
+.login {
+  padding-top: 10px;
+}
+
+.noUser {
+  display: flex;
+  padding-right: 15px;
+}
+
+.demo {
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.input-icons i {
+  position: absolute;
+  color: grey;
+  top: 20px;
+}
+
+#searchbar {
+  text-indent: 20px;
+  height: 20px;
+  width: 250px;
+}

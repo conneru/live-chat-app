@@ -58,6 +58,7 @@ function ChatroomColumn({
           backgroundColor: "#c396e4",
           padding: "10px",
           borderRadius: "10px",
+          fontFamily: "Uni-Heavy",
         }}
         onClick={() => {
           fetch("/logout");

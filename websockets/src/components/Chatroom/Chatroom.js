@@ -21,7 +21,9 @@ function Chatroom({
       <div className="users-column">
         <div className="server-name">
           {currentChat.name}
-          <ChannelModal chat={currentChat} setCurrentChat={setCurrentChat} />
+          {user.id === currentChat.admin ? (
+            <ChannelModal chat={currentChat} setCurrentChat={setCurrentChat} />
+          ) : null}
         </div>
         <div
           style={{
@@ -39,11 +41,16 @@ function Chatroom({
               padding: "20px",
               borderRadius: "10px",
               color: "#c396e4",
+              width: "200px",
             }}
           >
             {currentChat
               ? currentChat.users.map((user, id) => {
-                  return <div key={id}>{user}</div>;
+                  return (
+                    <div key={id} style={{ padding: "5px" }}>
+                      {user}
+                    </div>
+                  );
                 })
               : null}
           </div>
@@ -59,6 +66,7 @@ function Chatroom({
               cursor: "pointer",
               position: "absolute",
               bottom: "70px",
+              fontFamily: "Uni-Heavy",
             }}
             onClick={() => {
               dispatch(deleteChat(currentChat._id));
