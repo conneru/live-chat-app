@@ -30,13 +30,13 @@ const messageRoute = require("../routes/message");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-    optionSuccessStatus: 200,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "*",
+//     credentials: true,
+//     optionSuccessStatus: 200,
+//   })
+// );
 app.use(flash());
 app.use(
   session({
