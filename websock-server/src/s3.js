@@ -10,6 +10,7 @@ const s3 = new aws.S3({
   accessKeyId,
   secretAccessKey,
   signatureVersion: "v4",
+  sslEnabled: true,
 });
 
 async function generateUploadURL() {
