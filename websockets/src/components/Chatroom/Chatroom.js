@@ -21,7 +21,7 @@ function Chatroom({
       <div className="users-column">
         <div className="server-name">
           {currentChat.name}
-          {user.id === currentChat.admin ? (
+          {user._id === currentChat.admin ? (
             <ChannelModal chat={currentChat} setCurrentChat={setCurrentChat} />
           ) : null}
         </div>
