@@ -91,12 +91,9 @@ const io = require("socket.io")(server, {
   },
 });
 
-mongoose.connect(
-  "mongodb+srv://conneru:abc1234@cluster0.75usw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-  }
-);
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+});
 
 io.on("connection", (socket) => {
   console.log("a user connected");
