@@ -27,6 +27,7 @@ const Profile = ({ setShowModal }) => {
 
   const handleUpload = async (file) => {
     const { url } = await fetch("/s3Url").then((res) => res.json());
+    console.log(url);
     await fetch(url, {
       method: "PUT",
       headers: {
@@ -36,6 +37,7 @@ const Profile = ({ setShowModal }) => {
     });
 
     const imageUrl = url.split("?")[0];
+    console.log(imageUrl);
     return imageUrl;
   };
 

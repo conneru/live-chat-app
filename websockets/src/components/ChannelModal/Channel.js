@@ -27,7 +27,7 @@ const Channel = ({ setShowModal, chat, setCurrentChat }) => {
 
   const handleUpload = async (file) => {
     const { url } = await fetch("/s3Url").then((res) => res.json());
-    console.log(url);
+
     await fetch(url, {
       method: "PUT",
       headers: {
