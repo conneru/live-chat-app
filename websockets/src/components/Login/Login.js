@@ -59,7 +59,7 @@ function Login() {
           password,
         }),
       });
-      console.log(login);
+
       if (login.ok) {
         dispatch(authenticate());
         navigate("/dashboard");

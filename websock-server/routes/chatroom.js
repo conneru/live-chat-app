@@ -44,7 +44,6 @@ router.delete("/:roomId", async (req, res) => {
 });
 
 router.post("/all", async (req, res) => {
-  console.log("in all chat");
   const { userId } = req.body;
   const chatrooms = await Chatroom.find({ users: { $nin: [userId] } });
 

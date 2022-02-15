@@ -36,7 +36,7 @@ const Channel = ({ setShowModal, chat, setCurrentChat }) => {
       body: file,
     });
     const imageUrl = url.split("?")[0];
-    console.log(imageUrl);
+
     return imageUrl;
   };
 
