@@ -2,7 +2,7 @@ const aws = require("aws-sdk");
 
 const region = "us-west-2";
 const bucketName = "discord-clone-chat";
-const accessKeyId = process.env.S3_BUCKET_KEY;
+const accessKeyId = "AKIATOCPJ6GS23F6HYWQ";
 const secretAccessKey = process.env.S3_BUCKET_SECRET;
 
 const s3 = new aws.S3({
